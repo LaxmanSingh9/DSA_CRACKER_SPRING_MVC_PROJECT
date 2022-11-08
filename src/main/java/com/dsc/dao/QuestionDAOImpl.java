@@ -1,10 +1,10 @@
-package com.saransh.dao;
+package com.dsc.dao;
 
-import com.saransh.entity.Question;
+import com.dsc.entity.Question;
 
 
 
-import com.saransh.dao.QuestionDAO;
+import com.dsc.dao.QuestionDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Created by CryptoSingh1337 on 6/1/2021
  *
  * It is a DAO implementation of {@link CustomerDAO}
  */

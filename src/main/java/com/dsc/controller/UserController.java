@@ -1,4 +1,4 @@
-package com.saransh.controller;
+package com.dsc.controller;
 
 import java.util.*;
 import org.springframework.security.core.userdetails.User;
@@ -9,12 +9,12 @@ import org.springframework.stereotype.Controller;
 
 
 
-import com.saransh.utils.Util;
+import com.dsc.utils.Util;
 import java.util.*;
 
 
-import com.saransh.service.QuestionService;
-import com.saransh.utils.SortUtils;
+import com.dsc.service.QuestionService;
+import com.dsc.utils.SortUtils;
 import javax.servlet.http.HttpSession;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -32,12 +32,12 @@ import javax.validation.Valid;
 import java.util.List;
 
 
-import com.saransh.entity.Roles;
-import com.saransh.entity.Users;
-import com.saransh.service.UserService;
+import com.dsc.entity.Roles;
+import com.dsc.entity.Users;
+import com.dsc.service.UserService;
 
 @Controller
-public class HomeController {
+public class UserController {
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 	

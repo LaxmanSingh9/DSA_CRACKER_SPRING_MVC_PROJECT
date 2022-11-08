@@ -4,7 +4,7 @@
 <dwr>
 <allow>
   <create creator="new" javascript="DWRJS">
-   <param name="class" value="com.saransh.DWRUtil.DWRClass"/>
+   <param name="class" value="com.dsc.DWRUtil.DWRClass"/>
    </create>
 </allow>
 </dwr>

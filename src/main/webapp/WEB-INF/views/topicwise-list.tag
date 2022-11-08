@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page import="com.saransh.utils.SortUtils" %>
+<%@ page import="com.dsc.utils.SortUtils" %>
 <%--
   Created by CryptoSingh1337 on 6/1/2021
 --%>

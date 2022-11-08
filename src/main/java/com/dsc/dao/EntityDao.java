@@ -1,4 +1,4 @@
-package com.saransh.dao;
+package com.dsc.dao;
 
 import java.io.Serializable;
 

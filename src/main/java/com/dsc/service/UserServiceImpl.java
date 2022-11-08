@@ -1,4 +1,4 @@
-package com.saransh.service;
+package com.dsc.service;
 
 import java.util.ArrayList;
 
@@ -19,14 +19,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.saransh.dao.UserDao;
-import com.saransh.entity.Users;
-import com.saransh.entity.Roles;
-
-/**
- * @author bytestree
- *
- */
+import com.dsc.dao.UserDao;
+import com.dsc.entity.Users;
+import com.dsc.entity.Roles;
 
 @Service("userService")
 @Transactional(readOnly = true)

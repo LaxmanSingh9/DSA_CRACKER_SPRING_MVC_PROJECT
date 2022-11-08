@@ -1,4 +1,4 @@
-package com.saransh.dao;
+package com.dsc.dao;
 
 import java.io.Serializable;
 
@@ -11,8 +11,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-
 @SuppressWarnings("unchecked")
 public abstract class AbstractDao<E> implements EntityDao<E> {
 

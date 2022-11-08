@@ -1,4 +1,4 @@
-package com.saransh.entity;
+package com.dsc.entity;
 import java.util.HashSet;
 
 import java.util.Set;
@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 import javax.validation.constraints.NotNull;
 /*
- * This class encapsulate dsa problem
+ * This class encapsulate all dsa questions
  */
 @Entity
 @Table(name="question")

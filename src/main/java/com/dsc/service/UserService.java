@@ -1,13 +1,8 @@
-package com.saransh.service;
+package com.dsc.service;
 
-import com.saransh.entity.Roles;
-import com.saransh.entity.Users;
+import com.dsc.entity.Roles;
+import com.dsc.entity.Users;
 
-
-/**
- * @author bytestree
- *
- */
 public interface UserService {
 
 	void saveLastLoginDate(String username);

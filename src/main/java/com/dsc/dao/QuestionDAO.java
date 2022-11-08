@@ -1,13 +1,11 @@
-package com.saransh.dao;
+package com.dsc.dao;
 
 
-import com.saransh.entity.Question;
+import com.dsc.entity.Question;
 
 import java.util.List;
 
 /**
- * Created by CryptoSingh1337 on 6/1/2021
- *
  * Its a simple DAO interface for Customer class.
  */
 

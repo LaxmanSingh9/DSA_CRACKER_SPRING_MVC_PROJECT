@@ -1,4 +1,4 @@
-package com.saransh.aspects;
+package com.dsc.aspects;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -19,13 +19,13 @@ public class LoggingAspect {
 
     private final Logger logger = Logger.getLogger(getClass().getName());
 
-    @Pointcut("execution(* com.saransh.controller.*.*(..))")
+    @Pointcut("execution(* com.dsc.controller.*.*(..))")
     private void forControllerPackage() {}
 
-    @Pointcut("execution(* com.saransh.service.*.*(..))")
+    @Pointcut("execution(* com.dsc.service.*.*(..))")
     private void forServicePackage() {}
 
-    @Pointcut("execution(* com.saransh.dao.*.*(..))")
+    @Pointcut("execution(* com.dsc.dao.*.*(..))")
     private void forDAOPackage() {}
 
     @Pointcut("forControllerPackage() || forServicePackage() || forDAOPackage()")

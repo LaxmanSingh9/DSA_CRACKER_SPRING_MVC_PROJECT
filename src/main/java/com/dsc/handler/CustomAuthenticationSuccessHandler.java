@@ -1,4 +1,4 @@
-package com.saransh.handler;
+package com.dsc.handler;
 
 import java.io.IOException;
 
@@ -15,9 +15,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
-import com.saransh.utils.Util;
-import com.saransh.entity.Users;
-import com.saransh.service.UserService;
+import com.dsc.utils.Util;
+import com.dsc.entity.Users;
+import com.dsc.service.UserService;
 
 @Component("customAuthenticationSuccessHandler")
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
@@ -34,7 +34,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		user.setFailedLogins(0);
 		user.setLastLoginDate(new Date());
 		userService.saveUser(user);
-	   response.sendRedirect("topicwise");
+	    response.sendRedirect("topicwise");
 	}
 	
 

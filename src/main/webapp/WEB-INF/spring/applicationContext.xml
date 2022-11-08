@@ -9,6 +9,6 @@
 
    
 <bean id="applicationContextProvider"
-                        class="com.saransh.utils.ApplicationContextProvider "/>
+                        class="com.dsc.utils.ApplicationContextProvider "/>
 
 </beans>

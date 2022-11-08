@@ -1,11 +1,13 @@
-package com.saransh.entity;
+package com.dsc.entity;
 
 import java.io.Serializable;
 
 import java.util.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-
+/*
+ * This class encapsulate all the user for application
+ */
 
 @Entity
 @Table(name="users")

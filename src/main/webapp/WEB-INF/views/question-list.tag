@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.saransh.utils.SortUtils" %>
-<%@page import="com.saransh.service.QuestionServiceImpl"%>
+<%@ page import="com.dsc.utils.SortUtils" %>
+<%@page import="com.dsc.service.QuestionServiceImpl"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

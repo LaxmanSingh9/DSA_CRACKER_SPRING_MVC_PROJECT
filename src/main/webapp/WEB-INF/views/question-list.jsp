@@ -1,8 +1,8 @@
 <%@ page import="java.util.*" %>
-<%@page import="com.saransh.utils.*"%>
-<%@page import="com.saransh.entity.Users"%>
-<%@page import="com.saransh.service.QuestionService"%>
-<%@page import="com.saransh.service.UserService"%>
+<%@page import="com.dsc.utils.*"%>
+<%@page import="com.dsc.entity.Users"%>
+<%@page import="com.dsc.service.QuestionService"%>
+<%@page import="com.dsc.service.UserService"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by CryptoSingh1337 on 6/1/2021

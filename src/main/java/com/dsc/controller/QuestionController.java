@@ -1,18 +1,18 @@
-package com.saransh.controller;
+package com.dsc.controller;
 
-import com.saransh.entity.Question;
+import com.dsc.entity.Question;
 
-import com.saransh.entity.Users;
-import com.saransh.utils.Util;
+import com.dsc.entity.Users;
+import com.dsc.utils.Util;
 
 import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.saransh.service.QuestionService;
-import com.saransh.service.UserService;
-import com.saransh.utils.SortUtils;
+import com.dsc.service.QuestionService;
+import com.dsc.service.UserService;
+import com.dsc.utils.SortUtils;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

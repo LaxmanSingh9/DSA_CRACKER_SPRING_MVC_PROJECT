@@ -1,12 +1,14 @@
-package com.saransh.DWRUtil;
+package com.dsc.DWRUtil;
 
-import com.saransh.service.QuestionService;
-import com.saransh.utils.ApplicationContextProvider;
+import com.dsc.service.QuestionService;
+import com.dsc.utils.ApplicationContextProvider;
 import org.directwebremoting.WebContextFactory;
 import org.directwebremoting.WebContext;
 import org.directwebremoting.jsonp.*;
 import javax.servlet.http.HttpServletRequest;
-
+/*
+ *This is an dwr class 
+ */
 public class DWRClass {
 	public String markSolvedOrUnsolved(int id , boolean isCheck){
 		QuestionService qus= ApplicationContextProvider.getQuestionServiceImpl();

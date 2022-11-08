@@ -16,7 +16,7 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="com.saransh.controller,com.saransh.utils , com.saransh.DWRUtil , com.saransh.dao, com.saransh.entity ,com.saransh.service, com.saransh.aspects ,com.saransh.handler"/>
+    <context:component-scan base-package="com.dsc.controller,com.dsc.utils , com.dsc.DWRUtil , com.dsc.dao, com.dsc.entity ,com.dsc.service, com.dsc.aspects ,com.dsc.handler"/>
     <mvc:annotation-driven/>
     <mvc:resources mapping="/assets/**" location="/assets/"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -53,7 +53,7 @@
         </property>
         <property name="packagesToScan">
 			<list>
-				<value>com.saransh.entity</value>
+				<value>com.dsc.entity</value>
 			</list>
 		</property> 
      </bean>

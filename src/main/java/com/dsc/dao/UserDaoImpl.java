@@ -1,4 +1,4 @@
-package com.saransh.dao;
+package com.dsc.dao;
 
 import java.io.Serializable;
 
@@ -14,9 +14,9 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.saransh.entity.Question;
-import com.saransh.entity.Roles;
-import com.saransh.entity.Users;
+import com.dsc.entity.Question;
+import com.dsc.entity.Roles;
+import com.dsc.entity.Users;
 import org.springframework.stereotype.Repository;
 
 @Repository("userDao")

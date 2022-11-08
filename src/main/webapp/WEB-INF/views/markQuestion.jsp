@@ -1,8 +1,8 @@
 <%@ page import="java.util.*" %>
-<%@page import="com.saransh.utils.*"%>
-<%@page import="com.saransh.entity.Users"%>
-<%@page import="com.saransh.service.QuestionService"%>
-<%@page import="com.saransh.service.UserService"%>
+<%@page import="com.dsc.utils.*"%>
+<%@page import="com.dsc.entity.Users"%>
+<%@page import="com.dsc.service.QuestionService"%>
+<%@page import="com.dsc.service.UserService"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="org.json.simple.JSONArray"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

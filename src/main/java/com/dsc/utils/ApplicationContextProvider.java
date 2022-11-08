@@ -1,11 +1,11 @@
-package com.saransh.utils;
+package com.dsc.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-import com.saransh.service.QuestionService;
-import com.saransh.service.UserService;
+import com.dsc.service.QuestionService;
+import com.dsc.service.UserService;
 
 public class ApplicationContextProvider implements ApplicationContextAware{
 

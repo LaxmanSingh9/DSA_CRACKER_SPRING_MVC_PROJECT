@@ -1,4 +1,4 @@
-package com.saransh.handler;
+package com.dsc.handler;
 
 import java.io.IOException;
 
@@ -15,8 +15,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 
-import com.saransh.entity.Users;
-import com.saransh.service.UserService;
+import com.dsc.entity.Users;
+import com.dsc.service.UserService;
 
 @Component("customAuthenticationFailureHandler")
 public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {

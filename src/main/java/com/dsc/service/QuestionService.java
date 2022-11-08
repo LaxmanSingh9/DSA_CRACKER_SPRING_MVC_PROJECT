@@ -1,6 +1,6 @@
-package com.saransh.service;
-import com.saransh.entity.Question;
-import com.saransh.entity.Users;
+package com.dsc.service;
+import com.dsc.entity.Question;
+import com.dsc.entity.Users;
 
 import java.util.HashSet;
 import java.util.List;
