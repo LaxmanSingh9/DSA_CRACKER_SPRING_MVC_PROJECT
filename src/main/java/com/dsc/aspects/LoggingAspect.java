@@ -27,8 +27,11 @@ public class LoggingAspect {
 
     @Pointcut("execution(* com.dsc.dao.*.*(..))")
     private void forDAOPackage() {}
-
-    @Pointcut("forControllerPackage() || forServicePackage() || forDAOPackage()")
+    
+    @Pointcut("execution(* com.dsc.handler.*.*(..))")
+    private void forHandlerPackage() {}
+    
+    @Pointcut("forControllerPackage() || forServicePackage() || forDAOPackage() || forHandlerPackage()")
     private void forAppFlow() {}
 
     @Before("forAppFlow()")
