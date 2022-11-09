@@ -15,7 +15,7 @@
 			authentication-success-handler-ref="customAuthenticationSuccessHandler"
 			authentication-failure-handler-ref="customAuthenticationFailureHandler" />
 		<access-denied-handler error-page="/accessDenied" />
-		<logout  logout-url="/logout" delete-cookies="JSESSIONID" success-handler-ref="customLogOutSuccessHandler"/>
+		<logout  logout-url="/logout" delete-cookies="JSESSIONID" success-handler-ref="customLogOutHandler"/>
 	</http>
 
 	<authentication-manager>

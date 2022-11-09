@@ -15,6 +15,8 @@ import java.util.*;
 
 import com.dsc.service.QuestionService;
 import com.dsc.utils.SortUtils;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -48,6 +50,17 @@ public class UserController {
 	@GetMapping("/login")
 	public String loginPage() {
 		return "login";
+	}
+
+	/*
+	 *Method process the log out request  and mark the session invalid
+	 */
+	@GetMapping("/process_log_out")
+	public String logOutPage(HttpServletRequest request){
+	   HttpSession session = request.getSession();
+	   session.invalidate();
+	   return "redirect:/login?logout";
+		
 	}
 	@RequestMapping(value="/signup")
 	public String signup(Model model) {
@@ -106,7 +119,6 @@ public class UserController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("message", "This is home page. It is accessible to all roles.");
 		model.setViewName("applicatonHeader");
-		
 		return model;
 
 	}

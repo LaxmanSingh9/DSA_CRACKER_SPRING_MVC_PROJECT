@@ -77,7 +77,7 @@
       location.href = "add";
    };
    document.getElementById("logoutBtn").onclick = function(){
-	      location.href = "${pageContext.request.contextPath}/login?logout";
+	      location.href = "${pageContext.request.contextPath}/process_log_out";
    };
    function  topicwise_sheet(){
 	   alert("This sheet is not avaibale yet , will update it soon");

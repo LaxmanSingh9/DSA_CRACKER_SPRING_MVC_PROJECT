@@ -26,7 +26,7 @@ import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuc
 import com.dsc.utils.Util;
 import com.dsc.entity.Users;
 import com.dsc.service.UserService;
-@Component("customLogOutSuccessHandler")
+@Component("customLogOutHandler")
 class  CustomLogOutHandler extends SimpleUrlLogoutSuccessHandler implements LogoutSuccessHandler{
 	  @Autowired
   	  UserService userService;
