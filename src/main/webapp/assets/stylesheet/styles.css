@@ -396,5 +396,5 @@ tr:hover td.highlight div {
 
 }
 .box-shadow{
-	box-shadow:none;
+	box-shadow:none !important;
 }  

@@ -31,10 +31,10 @@
 			</div>
 		</form>
 		<div class="navbar-nav ml-auto">
-			<a href="#" id='home' class="nav-item nav-link active text-change"><span>Home</span></a>
+			<a href="#" id='home' class="nav-item nav-link text-change"><span>Home</span></a>
 			<a href="#" id='solve' class="nav-item nav-link text-change"><span>Problems</span></a>
 			<div class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action text-change pad-top" aria-expanded="false">Sheets<b class="caret"></b></a>
+				<a href="#" id='sheets' data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action text-change pad-top" aria-expanded="false">Sheets<b class="caret"></b></a>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="topicwise?sheet=love babber" id="sheet1">Love babber</a>
                     <a class="dropdown-item" href="#" id="sheet2" onclick="topicwise_sheet();">Striver</a>
@@ -58,13 +58,22 @@
 </nav>
 <script type="text/javascript">
    document.getElementById("home").onclick=function(){
-    location.href = "${pageContext.request.contextPath}/topicwise";
+	   $("#home").addClass('active');
+	   $("#solve").removeClass('active');
+	   $("#import").removeClass('active');
+	   location.href = "${pageContext.request.contextPath}/topicwise";
    };
    document.getElementById("solve").onclick=function(){
+	   $("#home").removeClass('active');
+	   $("#solve").addClass('active');
+	   $("#import").removeClass('active');
 	   location.href = "${pageContext.request.contextPath}/list";
    }
    document.getElementById("import").onclick = function(){
-      location.href = "${pageContext.request.contextPath}/admin/add";
+	   $("#home").removeClass('active');
+	   $("#solve").removeClass('active');
+	   $("#import").removeClass('active');
+	   location.href = "${pageContext.request.contextPath}/admin/add";
    };
    document.getElementById("logout").onclick = function(){
 	      location.href = "${pageContext.request.contextPath}/process_log_out";

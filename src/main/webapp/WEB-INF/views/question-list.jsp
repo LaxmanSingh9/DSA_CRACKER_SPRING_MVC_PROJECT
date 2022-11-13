@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question List</title>
+    <title>Problem List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -135,19 +135,19 @@
           <c:param name="page" value="${page-1}"/>
          </c:url>
         <li class="page-item">
-            <a class="page-link bg-col-text" href="<c:out value="${prev}" />"> <span aria-hidden="true">&laquo;</span></a>
+            <a class="page-link bg-col-text box-shadow" href="<c:out value="${prev}" />"> <span aria-hidden="true">&laquo;</span></a>
         </li>
         <c:forEach begin="${startIndex}" end="${endIndex}"  step="1" varStatus="i">
          <c:choose>
             <c:when test="${page == i.index}">
-                <li class="page-link text-dark">${i.index}</li>
+                <li class="page-link text-dark box-shadow">${i.index}</li>
             </c:when>
             <c:otherwise>
                 <c:url value="list?sheet=${sheet}&tagType=${tagType}&sortBy=${sortBy}&filter=${filter}" var="url">S
                     <c:param name="page" value="${i.index}"/>
                 </c:url>
                 <li class="page-item">
-                  <a  class="page-link " href='<c:out value="${url}" />'>${i.index}</a>
+                  <a  class="page-link box-shadow" href='<c:out value="${url}" />'>${i.index}</a>
                 </li>
                 
             </c:otherwise>
@@ -157,7 +157,7 @@
         <c:param name="page" value="${page + 1}"/>
        </c:url>
         <li class="page-item">
-          <a class="page-link bg-col-text" href='<c:out value="${next}" />'><span aria-hidden="true">&raquo;</span></a>
+          <a class="page-link bg-col-text box-shadow" href='<c:out value="${next}" />'><span aria-hidden="true">&raquo;</span></a>
         </li>
       </ul>
     </nav>
@@ -193,6 +193,10 @@
                location.href ='list?sheet=${sheet}&tagType=${tagType}&sortBy=${sortBy}'+'&filter=-1';
             }
       };
+      $("#home").removeClass('active');
+	  $("#solve").addClass('active');
+	  $("#import").removeClass('active');
+
    </script>
    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

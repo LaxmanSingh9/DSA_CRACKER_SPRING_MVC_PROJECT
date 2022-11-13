@@ -11,7 +11,6 @@
     <link href="${pageContext.request.contextPath}/assets/images/favicon.png" rel="icon">
 </head>
 <body>
-   
     <div id="addForm">
         <div class="bg-secondary bg-gradient">
             <div class="text-center">
