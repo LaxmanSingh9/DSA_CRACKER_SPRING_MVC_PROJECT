@@ -62,9 +62,9 @@ public class UserController {
 	   return "redirect:/login?logout";
 		
 	}
-	@RequestMapping(value="/signup")
-	public String signup(Model model) {
-		model.addAttribute("title", "Register - Smart Interview Preparation");
+	@GetMapping(value="/signup")
+	public String signup(HttpServletRequest req, Model model) {
+	    model.addAttribute("title", "Register - Smart Interview Preparation");
 		model.addAttribute("user", new Users());
 		return "signup";
 	}	
@@ -75,14 +75,7 @@ public class UserController {
 			try {
 				Users userCheck=userService.getUser(user.getUsername());
 				if(userCheck!=null){
-					model.addAttribute("user", user);
-					model.addAttribute("msgClass","alert alert-warning");
-					model.addAttribute("message","User Name already exist , please enter another User Name");
-				}
-				else if(user.getPassword().trim().length()<1) {
-					model.addAttribute("user", user);
-					model.addAttribute("msgClass","alert alert-warning");
-					model.addAttribute("message","Please  enter an valid password");
+					return "redirect:/signup?exist";
 				}
 				else {
 					Roles role=userService.getRole(1);
@@ -99,17 +92,12 @@ public class UserController {
 				    user.setLastLoginDate(new Date());
 	                user.setRoleses(set);
 				    this.userService.saveUser(user);
-                    model.addAttribute("user", new Users());
-                    model.addAttribute("msgClass","alert alert-success");
-                    model.addAttribute("message","Successful sign up , please sign in to proceed further");
+                    return "redirect:/login?login";
 				}
-				return "signup";
+				
 			} catch (Exception e) {
 				e.printStackTrace();
-				model.addAttribute("user", user);
-				model.addAttribute("msgClass","alert alert-danger");
-				model.addAttribute("message","Something went wrong"+ e.getMessage()+ "please try after some time");
-				return "signup";
+		        return "redirect:/signup?error";
 			}
 
     }

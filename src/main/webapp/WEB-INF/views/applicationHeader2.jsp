@@ -21,7 +21,8 @@
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<!-- Collection of nav links, forms, and other content for toggling -->
+	<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
+	   <!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
 		<form id="form1" class="navbar-form form-inline" action="${pageContext.request.contextPath}/search" method="GET">
 			<div class="input-group search-box">								
@@ -50,7 +51,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>    
+	</sec:authorize>
+	
 	
 </nav>
 <script type="text/javascript">
