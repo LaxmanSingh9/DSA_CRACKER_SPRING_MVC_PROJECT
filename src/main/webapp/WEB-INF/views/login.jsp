@@ -19,7 +19,7 @@
  </head>
 <body>
     <script>
-       var ms = 3000;
+       var ms = 500;
        setTimeout(function () {
          document.getElementById('alert').remove();
          

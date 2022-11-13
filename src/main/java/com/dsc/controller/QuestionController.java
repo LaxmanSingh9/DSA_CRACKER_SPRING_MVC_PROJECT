@@ -80,17 +80,17 @@ public class QuestionController<logger> {
        return "topicwise-list";
      
     }
-    @GetMapping("add")
+    @GetMapping("admin/add")
     public String addCustomerPage(Model model) {
         model.addAttribute("question", new Question()); // add customer attribute so that on submit spring mvc can call setter on it.
         return "question-form";
     }
-    @GetMapping("addQuestion")
+    @GetMapping("admin/addQuestion")
     public String addQuestionPage(Model model) {
         model.addAttribute("question", new Question()); // add customer attribute so that on submit spring mvc can call setter on it.
         return "question-form";
     }
-    @PostMapping("save")
+    @PostMapping("admin/save")
     public String saveQuestion(
             @Valid @ModelAttribute("question") Question question,
             BindingResult bindingResult) {
@@ -136,13 +136,13 @@ public class QuestionController<logger> {
         }
     	
     }
-   @GetMapping("update")
+   @GetMapping("admin/update")
     public String updateCustomerPage(@RequestParam("id") String id, Model model) {
         model.addAttribute("question", questionService.getQuestion(Integer.parseInt(id))); // add customer attribute with the specific id.
         return "question-form";
     }
 
-    @GetMapping("delete")
+    @GetMapping("admin/delete")
     public String deleteCustomer(@RequestParam("id") String id) {
     	questionService.deleteQuestion(Integer.parseInt(id)); // delete customer using the questionService class
         return "redirect:/list";
@@ -161,7 +161,7 @@ public class QuestionController<logger> {
    public ModelAndView getPagination(ModelAndView modelAndView,List<Question> ques ,String p) {
     	
         PagedListHolder<Question> pagedListHolder = new PagedListHolder<>(ques);
-        pagedListHolder.setPageSize(10);
+        pagedListHolder.setPageSize(20);
         modelAndView.addObject("maxPages",pagedListHolder.getPageCount());
         Integer page=null;
         if(p!=null && p.trim().length()!=0){

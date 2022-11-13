@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="${pageContext.request.contextPath}/assets/stylesheet/styles.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/images/favicon.png" rel="icon">
+    <link href="${pageCaontext.request.contextPath}/assets/images/favicon.png" rel="icon">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="

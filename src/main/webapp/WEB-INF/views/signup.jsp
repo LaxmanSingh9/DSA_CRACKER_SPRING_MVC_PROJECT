@@ -13,26 +13,6 @@
     <link href="${pageContext.request.contextPath}/assets/stylesheet/styles.css" rel="stylesheet">
 </head>
 <body>
-    <script>
-       var ms = 3000;
-       setTimeout(function () {
-         document.getElementById('alert').remove();
-         document.getElementById('msgS').remove();
-       }, ms);
-
-         function check_pass() {
-            if (document.getElementById('password').value ==
-                document.getElementById('confirm_password').value){
-            document.getElementById('btnForm').disabled = false;
-            document.getElementById('msg').style.color = 'green';
-            document.getElementById('msg').innerHTML = 'matching';
-        } else {
-        	 document.getElementById('btnForm').disabled = true;
-        	 document.getElementById('msg').style.color = 'red';
-        	 document.getElementById('msg').innerHTML = 'not matching';
-        }
-      }
-    </script>
     <div class="container-fluid">
       <div class="">
           <div class="text-center"><h1 class="pt-3 pb-3">Sign Up Form</h1>
@@ -59,7 +39,7 @@
                                 </div>
                                 <div class="input-group mb-3">
                                    <span class="input-group-text bg-primary"><i class="fa fa-lock text-white" style="font-weight: 300;font-size: 24px;"></i></span>
-                                   <form:input type="password" cssClass="form-control" name="password" path="password" onchange='check_pass();' id="password"/>
+                                   <form:input type="password" cssClass="form-control" name="password" onkeyp="check_len();" path="password"  id="password"/>
                                    <form:errors cssClass="error ps-5" path="password"/>
                                 </div>
                                 <div class="input-group mb-3">
@@ -83,5 +63,44 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script>
+          var ms = 3000;
+         setTimeout(function () {
+           document.getElementById('alert').remove();
+           document.getElementById('msg').remove();
+         }, ms);
+
+         function check_pass() {
+            if(document.getElementById('password').value ==
+                document.getElementById('confirm_password').value){
+              document.getElementById('btnForm').disabled = false;
+              document.getElementById('msg').innerHTML = 'matching';
+             document.getElementById('msg').style.color = 'green';
+           
+            } 
+            else {
+        	  document.getElementById('btnForm').disabled = true;
+        	  document.getElementById('msg').innerHTML = 'not matching';
+        	  document.getElementById('msg').style.color = 'red';
+        	  
+           }
+         }
+         function check_len(){
+        	 if(document.getElementById("password").value.length >= 8) {
+                 document.getElementById('btnForm').disabled = false;
+                 document.getElementById('msg').innerHTML = 'matching';
+                 document.getElementById('msg').style.color = 'green';
+                 
+              }
+              else {
+                  document.getElementById('btnForm').disabled = true;
+                  document.getElementById('msg').innerHTML = "<b>Username must contain atleast<b>8 characters</b>";
+    	          document.getElementById('msg').style.color = 'red';
+    	          
+              }	 
+         
+         }
+        
+  </script>
 </body>
 </html>

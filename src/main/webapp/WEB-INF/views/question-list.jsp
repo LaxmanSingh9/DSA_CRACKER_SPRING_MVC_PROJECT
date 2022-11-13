@@ -4,6 +4,7 @@
 <%@page import="com.dsc.service.QuestionService"%>
 <%@page import="com.dsc.service.UserService"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%--
   Created by CryptoSingh1337 on 6/1/2021
 --%>
@@ -25,17 +26,17 @@
     <script  type='text/javascript' src='${pageContext.request.contextPath}/dwr/interface/DWRJS.js'></script>
 </head>
 <body data-new-gr-c-s-check-loaded="14.1083.0" data-gr-ext-installed="" style="background: #f9f4f4;>
-   <jsp:include page="applicationHeader.jsp"/>
-       <div class="topic text-center" style="padding-top: 120px;">
+   <jsp:include page="applicationHeader2.jsp"/>
+          <div class="topic text-center" style="padding-top: 80px;">
             <h4>${sheet} SDE Sheet ${tagType} Problems</h4>
             <h3 style="margin-bottom: 15px;text-align: center;color: #e75770;font-size: inherit;"> \*Curated Lists of All Popular ${tagType} Interview Questions */</h3>       
       </div>
-   <div class="fluid-container" style="padding-left: 9.5%;display: flex;">
+      <div class="fluid-container" style="padding-left: 9.5%;display: flex;">
      <div class="form-check form-switch" style="padding-top: 11px;width: 82%;">
          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
          <label class="form-check-label" for="flexSwitchCheckDefault" style="color: #6b6b6b;font-size: 15px;font-weight: 600;">Hide Solved</label>
-    </div>
-     <div class="dropdown" style="padding-bottom: 0px;float: right;/* padding-left: 83.5%; */width: 15%;padding-bottom: -2px;">
+     </div>
+      <div class="dropdown" style="padding-bottom: 0px;float: right;/* padding-left: 83.5%; */width: 15%;padding-bottom: -2px;">
                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="background: orange;">
                   Sort By
              </button>
@@ -45,12 +46,13 @@
                 <a class="dropdown-item"  href="list?sheet=${sheet}&tagType=${tagType}&sortBy=2&filter=${filter}">Difficulty</a>
               </div>
      </div>
+   
    </div> 
     <c:if test="${filter== 1}" >
-    <script>
+      <script>
        document.getElementById("flexSwitchCheckDefault").checked=true;
-    </script>
-   </c:if>   
+      </script>
+     </c:if>   
    <c:url value="list" var="switchUrl">
           <c:param name="sheet" value="${sheet}"></c:param>
           <c:param name="tagType" value="${tagType}"></c:param>
@@ -94,18 +96,25 @@
                                 
                                 <td class="${question.diff}" style="width: 5%;font-size:14px;">${question.diff}</td>
                                 <td style="width:5%; font-size:14px;">
-                                 <%-- <div style="display:flex;"> 
-                                      <a class="li-cls1" onclick="editOrDelete('delete',${question.id});" href="#"><i class="fa fa-trash" data-toggle="tooltip" title="delete"></i></a>
-                                      <a class="li-cls1" onclick="editOrDelete('update',${question.id});" href="#"><i class="fa fa-edit" data-toggle="tooltip" title="update"></i></a>
-                                  </div> --%>
-                                 <div class="form-check">
-                                      <input type="checkbox" class="form-check-input bg-blue" id="${question.id}" onClick="markSolvedOrUnsoved(${question.id})" name="isSolved"></input>
-                                 </div>
-                                 <c:if test="${userSolvedQuesIds.contains(question.id)}">
-                                    <script>
-                                        document.getElementById("<c:out value='${question.id}'/>").checked = true;
-                                    </script>
-                                 </c:if>
+                                 <sec:authorize access="hasRole('ADMIN')">
+                                      <div style="display:flex;"> 
+                                        <a class="li-cls1" onclick="editOrDelete('delete',${question.id});" href="#"><i class="fa fa-trash" data-toggle="tooltip" title="delete"></i></a>
+                                        <a class="li-cls1" onclick="editOrDelete('update',${question.id});" href="#"><i class="fa fa-edit" data-toggle="tooltip" title="update"></i></a>
+                                      </div> 
+                                  </sec:authorize>
+                                  <sec:authorize access="hasRole('ROLE_USER')">
+                                      <div style="display:flex;"> 
+                                          <div class="form-check">
+                                            <input type="checkbox" class="form-check-input bg-blue" id="${question.id}" onClick="markSolvedOrUnsoved(${question.id})" name="isSolved"></input>
+                                          </div>
+                                         <c:if test="${userSolvedQuesIds.contains(question.id)}">
+                                            <script>
+                                               document.getElementById("<c:out value='${question.id}'/>").checked = true;
+                                            </script>
+                                          </c:if>
+                                       </div> 
+                                  </sec:authorize>
+                                 
                                 </td>
                                 
                           </tr>
@@ -115,17 +124,18 @@
                </div>
             </c:when>
             <c:otherwise>
-                <h3 class="text-center">No record exists!</h3>
+                <h3 class="text-center" style="padding-top: 80px;">No record exists!</h3>
             </c:otherwise>
         </c:choose>
     </div>
-    <nav class="pg1"  aria-label="Page navigation">
+    <c:if test="${page > 0}">
+       <nav class="pg1"  aria-label="Page navigation">
        <ul class="pagination pagination-lg pg2">
          <c:url value="list?sheet=${sheet}&tagType=${tagType}&sortBy=${sortBy}&filter=${filter}" var="prev">
           <c:param name="page" value="${page-1}"/>
          </c:url>
         <li class="page-item">
-            <a class="page-link " href="<c:out value="${prev}" />"> <span aria-hidden="true">&laquo;</span></a>
+            <a class="page-link bg-col-text" href="<c:out value="${prev}" />"> <span aria-hidden="true">&laquo;</span></a>
         </li>
         <c:forEach begin="${startIndex}" end="${endIndex}"  step="1" varStatus="i">
          <c:choose>
@@ -147,14 +157,16 @@
         <c:param name="page" value="${page + 1}"/>
        </c:url>
         <li class="page-item">
-          <a class="page-link" href='<c:out value="${next}" />'><span aria-hidden="true">&raquo;</span></a>
+          <a class="page-link bg-col-text" href='<c:out value="${next}" />'><span aria-hidden="true">&raquo;</span></a>
         </li>
       </ul>
     </nav>
+    </c:if>
+    
     <script>
       function editOrDelete(action,idToChange){
          let msg="Are you sure you want to "+action +" this question?";
-         let link=action+"?id="+idToChange;
+         let link="${pageContext.request.contextPath}/admin/"+action+"?id="+idToChange;
          if(confirm(msg)){
             location.href =link;
          }

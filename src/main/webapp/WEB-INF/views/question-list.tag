@@ -14,7 +14,7 @@
     
 </head>
 <body data-new-gr-c-s-check-loaded="14.1083.0" data-gr-ext-installed="" style="background: #f9f4f4;>
-    <jsp:include page="applicationHeader.jsp"/>
+    <jsp:include page="applicationHeader2.jsp"/>
     <div class="text-center" style="padding-top: 120px;">
             <h4>${sheet} SDE Sheet ${tagType} Problems</h4>
             <h3 style="margin-bottom: 15px;text-align: center;color: #e75770;font-size: inherit;"> \*Curated Lists of All Popular ${tagType} Interview Questions */</h3>       

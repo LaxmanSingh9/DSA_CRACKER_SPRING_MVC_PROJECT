@@ -17,10 +17,10 @@
     <link href="${pageContext.request.contextPath}/assets/images/favicon.png" rel="icon">
 </head>
 <body data-new-gr-c-s-check-loaded="14.1083.0" data-gr-ext-installed="" style="background: #f9f4f4;">
-        <jsp:include page="applicationHeader.jsp"/>
+        <jsp:include page="applicationHeader2.jsp"/>
         <c:choose>
           <c:when test="${topics.size() > 0}">
-              <div class="topic text-center" style="padding-top:115px;">
+              <div class="topic text-center" style="padding-top:80px;">
                 <h4> <span id="sheetName"></h4>
                 <h3 style="margin-bottom: 15px;text-align: center;color: #e75770;font-size: inherit;"> \*Curated Lists of All Popular Interview Questions */</h3>       
              </div>  

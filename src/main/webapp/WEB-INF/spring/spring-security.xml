@@ -8,8 +8,8 @@
 		<intercept-url pattern="/login**" access="permitAll" />
 		<intercept-url pattern="/signup**" access="permitAll" />
 		<intercept-url pattern="/do_register**" access="permitAll" />
-		<intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
 
 		<form-login login-page="/login"
 			authentication-success-handler-ref="customAuthenticationSuccessHandler"
