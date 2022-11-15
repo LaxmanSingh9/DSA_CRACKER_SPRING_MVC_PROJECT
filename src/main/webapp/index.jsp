@@ -1,9 +1,4 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%@ page import="com.dsc.utils.SortUtils" %>
-<%--
-  Created by CryptoSingh1337 on 6/1/2021
---%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  </head>
-<body style="background: #f9f4f4;>
-   <jsp:include page="/WEB-INF/views/applicationHeader.jsp"/>
+<body>
+   <jsp:include page="/WEB-INF/views/applicationHeader2.jsp"/>
 </body>

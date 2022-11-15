@@ -19,19 +19,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="${pageContext.request.contextPath}/assets/stylesheet/styles.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/assets/images/favicons.png" rel="icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script  type='text/javascript' src='${pageContext.request.contextPath}/dwr/util.js'></script>
-    <script   type='text/javascript' src='${pageContext.request.contextPath}/dwr/engine.js'></script>
-    <script  type='text/javascript' src='${pageContext.request.contextPath}/dwr/interface/DWRJS.js'></script>
-</head>
-<body data-new-gr-c-s-check-loaded="14.1083.0" data-gr-ext-installed="" style="background: #f9f4f4;>
-   <jsp:include page="applicationHeader2.jsp"/>
-          <div class="topic text-center" style="padding-top: 80px;">
+    <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+ </head>
+<body data-new-gr-c-s-check-loaded="14.1083.0" data-gr-ext-installed="" style="background: #f9f4f4;">
+    <div id="preloader">
+          <div id="loader" class="center"></div>
+    </div>
+    <jsp:include page="applicationHeader2.jsp"/>
+    <div class="topic text-center" style="padding-top: 80px;">
             <h4>${sheet} SDE Sheet ${tagType} Problems</h4>
             <h3 style="margin-bottom: 15px;text-align: center;color: #e75770;font-size: inherit;"> \*Curated Lists of All Popular ${tagType} Interview Questions */</h3>       
-      </div>
+   </div>
       <div class="fluid-container" style="padding-left: 9.5%;display: flex;">
      <div class="form-check form-switch" style="padding-top: 11px;width: 82%;">
          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -106,11 +108,12 @@
                                   <sec:authorize access="hasRole('ROLE_USER')">
                                       <div style="display:flex;"> 
                                           <div class="form-check">
-                                            <input type="checkbox" class="form-check-input bg-blue" id="${question.id}" onClick="markSolvedOrUnsoved(${question.id})" name="isSolved"></input>
+                                            <input title="Unsolve" type="checkbox" class="form-check-input bg-blue" id="${question.id}" onClick="markSolvedOrUnsoved(${question.id});sweetAlert('Greetings', 'Hi', 'error');" name="isSolved"></input>
                                           </div>
                                          <c:if test="${userSolvedQuesIds.contains(question.id)}">
                                             <script>
                                                document.getElementById("<c:out value='${question.id}'/>").checked = true;
+                                               document.getElementById("<c:out value='${question.id}'/>").setAttribute("title", "Solve");
                                             </script>
                                           </c:if>
                                        </div> 
@@ -165,7 +168,11 @@
     </c:if>
     
     <script>
-      function editOrDelete(action,idToChange){
+       var loader = document.getElementById("preloader");
+       window.addEventListener("load" ,function(){
+   	     loader.style.display='none';
+       });
+       function editOrDelete(action,idToChange){
          let msg="Are you sure you want to "+action +" this question?";
          let link="${pageContext.request.contextPath}/admin/"+action+"?id="+idToChange;
          if(confirm(msg)){
@@ -174,6 +181,7 @@
        }
        function markSolvedOrUnsoved(id){
             var isMark = document.getElementById(id+'').checked;
+            document.getElementById(id+'').setAttribute("title", isMark==true ? "Solve" : "Unsolve");
             $.ajax({
                   type : "GET",
                   url : "${pageContext.request.contextPath}/markQuestion",
@@ -197,8 +205,7 @@
       $("#home").removeClass('active');
 	  $("#solve").addClass('active');
 	  $("#import").removeClass('active');
-
-   </script>
+</script>
    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

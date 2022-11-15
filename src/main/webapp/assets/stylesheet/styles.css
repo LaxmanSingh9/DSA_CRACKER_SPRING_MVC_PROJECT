@@ -398,3 +398,45 @@ tr:hover td.highlight div {
 .box-shadow{
 	box-shadow:none !important;
 }  
+#preloader{
+          background-color:#A4A4A4;
+          height:100%;
+          top:0;
+          left:0;
+          zoom:1;
+          width:100%;
+          position:fixed;
+          z-index:4444;
+          -moz-opacity:.5;
+          opacity:.50;
+  }
+
+.center {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin:15% auto;
+  }
+ #loader {
+     border:3px solid #add8e6 !important;
+     border-radius: 50%;
+     border-top: 3px solid #00008B !important;
+     height: 39px;
+     width:39px;
+     -webkit-animation: spin 444ms linear infinite; /* Safari */
+     animation: spin 444ms linear infinite
+ }
+@keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}     
+
+
+ 
