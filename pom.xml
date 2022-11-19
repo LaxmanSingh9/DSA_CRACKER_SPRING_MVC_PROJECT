@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.dsc</groupId>
-  <artifactId>dsaCracker</artifactId>
+  <artifactId>dscracker</artifactId>
   <version>1.0.RELEASE</version>
   <packaging>war</packaging>
 
-  <name>dsaCracker</name>
+  <name>dscracker</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
