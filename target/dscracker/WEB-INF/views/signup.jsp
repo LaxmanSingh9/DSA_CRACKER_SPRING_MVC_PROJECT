@@ -72,7 +72,7 @@
                            <span id="msg"></span>  
                          </div>
                         <div>
-                             <form:form class="form-container" onsubmit="return save_user();" action="/dsaCracker/do_register" style="margin-top:20px" method="POST" modelAttribute="user">
+                             <form:form class="form-container" onsubmit="return save_user();" action="${pageCaontext.request.contextPath}/do_register" style="margin-top:20px" method="POST" modelAttribute="user">
                                <div class="input-group mb-3">
                                    <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
                                    <form:input type="text" cssClass="form-control" style="box-shadow:none;" oninput='removeMsg();' name="username" path="username"/>
@@ -93,7 +93,7 @@
                                     <button class="btn btn-primary" style="box-shadow:none;" type="submit" id="btnForm"><span></span> Sign up</button>
                                 </div>
                                 <p class="text-center mt-3">Already have an account?
-                                       <a href="/dsaCracker/login" class="text-primary">Sign in</a>
+                                       <a href="${pageCaontext.request.contextPath}/login" class="text-primary">Sign in</a>
                                 </p>
                             </form:form>
                         </div>

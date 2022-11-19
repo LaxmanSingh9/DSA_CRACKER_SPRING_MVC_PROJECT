@@ -18,7 +18,7 @@
                 <h1 class="pt-3 pb-3">Save Question</h1>
             </div>
         </div>
-        <form:form class="form-container" action="/dsaCracker/save" method="POST" modelAttribute="question">
+        <form:form class="form-container" action="${pageCaontext.request.contextPath}/save" method="POST" modelAttribute="question">
             <form:hidden path="id"/>
             <div class="input-group mb-3 me-5">
                 <span class="input-group-text" id="basic-addon1">Question Name</span>

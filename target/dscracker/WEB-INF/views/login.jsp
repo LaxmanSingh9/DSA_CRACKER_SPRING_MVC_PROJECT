@@ -62,7 +62,7 @@
                   <button class="btn btn-primary" style="box-shadow:none;" type="submit" id="btnForm"><span></span> Sign in</button>
                </div>
               <p class="text-center mt-3">Do not have an account?
-                  <a href="/dsaCracker/signup" type="sumbit" class="text-primary">Register</a>
+                  <a href="${pageCaontext.request.contextPath}/signup" type="sumbit" class="text-primary">Register</a>
                </p>
 			</fieldset>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

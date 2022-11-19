@@ -31,7 +31,7 @@
 <!--    Setup c3p0 connection pool-->
     <bean id="c3p0DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://ec2-44-205-177-160.compute-1.amazonaws.com:5432/d3rebvmeo982on"/>
+        <property name="jdbcUrl" value="jdbc:postgresql://ec2-44-205-177-160.compute-1.amazonaws.com:5432/d3rebvmeo982on"/>
         <property name="user" value="lbxnqfgqxiulam"/>
         <property name="password" value="76f8d9ce347d03e139b809eaca5acf693417f508e10121f9821eb31328c2276a"/>
        
@@ -46,7 +46,7 @@
         <property name="dataSource" ref="c3p0DataSource"/>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop> 
            </props>
