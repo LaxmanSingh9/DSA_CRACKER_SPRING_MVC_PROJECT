@@ -52,17 +52,17 @@
 				</c:if>
 				<div class="input-group mb-3">
                    <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
-                   <input type="text" class="form-control" style="box-shadow:none;" name="username"/>
+                   <input autocomplete="off" type="text" class="form-control" style="box-shadow:none;" name="username"/>
                </div>
                <div class="input-group mb-3">
                     <span class="input-group-text bg-primary"><i class="fa fa-lock text-white" style="font-weight: 300;font-size: 24px;"></i></span>
-                    <input type="password" class="form-control" name="password" style="box-shadow:none;"  onchange='check_pass();' id="password"/>
+                    <input type="password" autocomplete="off" class="form-control" name="password" style="box-shadow:none;"  onchange='check_pass();' id="password"/>
                </div>
                <div class="d-grid col-12 mx-auto">
                   <button class="btn btn-primary" style="box-shadow:none;" type="submit" id="btnForm"><span></span> Sign in</button>
                </div>
               <p class="text-center mt-3">Do not have an account?
-                  <a href="${pageCaontext.request.contextPath}/signup" type="sumbit" class="text-primary">Register</a>
+                  <a href="${pageContext.request.contextPath}/signup" type="sumbit" class="text-primary">Register</a>
                </p>
 			</fieldset>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

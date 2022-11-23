@@ -54,7 +54,7 @@ public class QuestionController<logger> {
        JSONArray jsonArr = new JSONArray();
        JSONObject topic = new JSONObject();
        List<Question>list;
-       String []topicNames=new String[]{"Arrays","Strings","Greedy","Dynamic Programming","Backtracking","Stack","Queue","Linked List","Heap","Bit Manipulation","Matrix","Hash Table","Searching","Sorting","Binary Trees","Binary Search Tree","Tree","Graph","Trie"};
+       String []topicNames=new String[]{"Arrays","Strings","Greedy","Dynamic Programming","Backtracking", "Stack&Queue", "Linked List", "Heap", "Bit Manipulation", "Matrix", "Search&Sort","Binary Trees" ,"Binary Search Tree", "Graph", "Trie"};
        if(sheet!=null) {
     	   for(int i=0;i<topicNames.length;i++){
              list=questionService.searchQuestionByTagAndSheetName(topicNames[i],Util.formatString(sheet));

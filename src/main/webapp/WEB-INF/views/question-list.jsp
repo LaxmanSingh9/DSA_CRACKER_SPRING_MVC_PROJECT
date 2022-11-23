@@ -108,7 +108,7 @@
                                   <sec:authorize access="hasRole('ROLE_USER')">
                                       <div style="display:flex;"> 
                                           <div class="form-check">
-                                            <input title="Unsolve" type="checkbox" class="form-check-input bg-blue" id="${question.id}" onClick="markSolvedOrUnsoved(${question.id});sweetAlert('Greetings', 'Hi', 'error');" name="isSolved"></input>
+                                            <input title="Unsolve" type="checkbox" class="form-check-input bg-blue" id="${question.id}" onClick="markSolvedOrUnsoved(${question.id});" name="isSolved"></input>
                                           </div>
                                          <c:if test="${userSolvedQuesIds.contains(question.id)}">
                                             <script>
@@ -134,7 +134,7 @@
     </div>
     <c:if test="${page > 0}">
        <nav class="pg1"  aria-label="Page navigation">
-       <ul class="pagination pagination-lg pg2">
+       <ul class="pagination pagination-lg  flex-wrap pg2">
          <c:url value="list?sheet=${sheet}&tagType=${tagType}&sortBy=${sortBy}&filter=${filter}" var="prev">
           <c:param name="page" value="${page-1}"/>
          </c:url>
@@ -187,7 +187,13 @@
                   url : "${pageContext.request.contextPath}/markQuestion",
                   data : {"id":id , "isMark":isMark},
                   success: function(data){
-                     alert(data);
+                	  if(data =='Mark successfully'){
+                		  sweetAlert('Good job!', data , 'success');
+                	  }
+                	  else{
+                		  sweetAlert('','Unmark succesfully' , 'info');
+                	  }
+                	  
                  }
            });
        }
