@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="${pageContext.request.contextPath}/assets/stylesheet/styles.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/assets/images/favicons.png" rel="icon">
+    
+  </head>
 </head>
 <body>
     <script>
@@ -25,6 +27,7 @@
         function removeMsg(){
  	       $("#msg").hide();
         }
+       
        function save_user(){
     	   var regExp = /[a-zA-Z]/;
     	   let username = document.getElementById('username').value.trim();
@@ -68,19 +71,20 @@
                       <c:if test="${param.error != null}">
                            <div class="alert alert-danger" id="alert" role="alert"><span>"Something went wrong , please try after some time."</span></div>
                      </c:if>
-                        <div style="text-align:center;height:2px;">
+                        <div class="msg">
                            <span id="msg"></span>  
                          </div>
                         <div>
-                             <form:form class="form-container" onsubmit="return save_user();" action="/dsaCracker/do_register" style="margin-top:20px" method="POST" modelAttribute="user">
+                             <form:form class="form-container" id="login-form" onsubmit="return save_user();" action="${pageContext.request.contextPath}/do_register" style="margin-top:20px" autocomplete="off" method="POST" modelAttribute="user">
+                               <input autocomplete="false" name="hidden" type="text" style="display:none;">
                                <div class="input-group mb-3">
                                    <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
-                                   <form:input type="text" cssClass="form-control" style="box-shadow:none;" oninput='removeMsg();' name="username" path="username"/>
+                                   <form:input type="text"  cssClass="form-control" style="box-shadow:none;" oninput='removeMsg();' name="username" path="username" autocomplete="off" />
                                    <form:errors cssClass="error ps-5" path="username"/>
                                 </div>
                                 <div class="input-group mb-3">
                                    <span class="input-group-text bg-primary"><i class="fa fa-lock text-white" style="font-weight: 300;font-size: 24px;"></i></span>
-                                   <form:input type="password" cssClass="form-control" style="box-shadow:none;" name="password" path="password" oninput='removeMsg();' id="password"/>
+                                   <form:input type="password" cssClass="form-control" style="box-shadow:none;" name="password" path="password" oninput='removeMsg();' id="password" autocomplete="off" />
                                    <form:errors cssClass="error ps-5" path="password"/>
                                 </div>
                                 <div class="input-group mb-3">
@@ -93,14 +97,13 @@
                                     <button class="btn btn-primary" style="box-shadow:none;" type="submit" id="btnForm"><span></span> Sign up</button>
                                 </div>
                                 <p class="text-center mt-3">Already have an account?
-                                       <a href="/dsaCracker/login" class="text-primary">Sign in</a>
+                                       <a href="${pageContext.request.contextPath}/login" class="text-primary">Sign in</a>
                                 </p>
                             </form:form>
                         </div>
                     </div>
                 </div>
             
-        
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  

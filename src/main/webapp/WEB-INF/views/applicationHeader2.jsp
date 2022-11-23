@@ -26,7 +26,7 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
 		<form id="form1" class="navbar-form form-inline" action="${pageContext.request.contextPath}/search" method="GET">
 			<div class="input-group search-box">								
-				<input type="text" id="search" name="search" class="form-control" placeholder="Search here..." value="${search}" required>
+				<input type="text" id="search" name="search" class="form-control" placeholder="Search here..." value="${search}" autocomplete="off" required>
 				<a  href="javascript:$('#form1').submit();"><span style="background: aliceblue;" class="input-group-addon"><i class="fa fa-search"></i></span></a>
 			</div>
 		</form>
@@ -36,7 +36,7 @@
 			<div class="nav-item dropdown">
 				<a href="#" id='sheets' data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action text-change pad-top" aria-expanded="false">Sheets<b class="caret"></b></a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="topicwise?sheet=love babber" id="sheet1">Love babber</a>
+					<a class="dropdown-item" href="topicwise?sheet=love babbar" id="sheet1">Love Babbar</a>
                     <a class="dropdown-item" href="#" id="sheet2" onclick="topicwise_sheet();">Striver</a>
                     <a class="dropdown-item" href="#"  id="sheet3" onclick="topicwise_sheet();">Fraz</a>
 				</div>

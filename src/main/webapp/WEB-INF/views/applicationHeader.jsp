@@ -56,7 +56,7 @@
           <button id="importBtn" class="btn btn-outline-success" type="submit">Import</button>
         </li>
       </ul>
-      <form class="d-flex-1" action="dsaCracker/search" method="GET">
+      <form class="d-flex-1" action="${pageCaontext.request.contextPath}/search" method="GET">
         <input type="text"class="form-control me-22" name="search" placeholder="search by problem name" value="${search}" required>
         <input type="submit" class="btn btn-success" value="Search">
       </form>

@@ -17,7 +17,7 @@
                 <h1 class="pt-3 pb-3">Save Question</h1>
             </div>
         </div>
-        <form:form class="form-container" action="/dsaCracker/admin/save" method="POST" modelAttribute="question">
+        <form:form class="form-container" action="${pageContext.request.contextPath}/admin/save" method="POST" modelAttribute="question">
             <form:hidden path="id"/>
             <div class="input-group mb-3 me-5">
                 <span class="input-group-text" id="basic-addon1">Question Name</span>
@@ -50,7 +50,7 @@
                 <form:errors cssClass="error ps-5" path="link2"/>
             </div>
             <input type="submit" class="btn btn-primary" value="Save">
-            <a class="ms-5" href="list">Back to list</a>
+            <a class="ms-5" href="${pageContext.request.contextPath}/list">Back to list</a>
         </form:form>
     </div>
 </body>
